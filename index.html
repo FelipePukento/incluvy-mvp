@@ -135,6 +135,7 @@
       Incluvy - Transporte Inclusivo
     </header>
     <div class="screen" id="pantalla">
+
       <div class="card">
         <p>Selecciona tu tipo de discapacidad o necesidad de accesibilidad:</p>
         <p style="font-size:0.95em;color:#555;">
@@ -206,9 +207,9 @@
 
       const paraderos = [
         { lat: -36.827, lng: -73.049, nombre: 'Paradero Plaza España' },
-        { lat: -36.823, lng: -73.041, nombre: 'Paradero Hospital Regional' },
+        { lat: -36.823, lng: -73.041, nombre: 'Paradero Mall Centro' },
         { lat: -36.829, lng: -73.054, nombre: 'Paradero Universidad' },
-        { lat: -36.825, lng: -73.038, nombre: 'Paradero Mall Centro' },
+        { lat: -36.825, lng: -73.038, nombre: 'Paradero Hospital Regional' },
         { lat: -36.828, lng: -73.052, nombre: 'Paradero sin acceso con rampa ⚠️' },
         { lat: -36.826, lng: -73.0485, nombre: 'Paradero con acera elevada sin rebaje ⚠️' }
       ];
@@ -251,10 +252,10 @@
         ruta = [[-36.827, -73.049], [-36.826, -73.046], [-36.824, -73.044], [-36.823, -73.041]];
         color = 'blue';
       } else if (tipo === 'visual') {
-        ruta = [[-36.829, -73.054], [-36.828, -73.051], [-36.8265, -73.0475], [-36.825, -73.0455], [-36.8235, -73.042]];
+        ruta = [[-36.829, -73.054], [-36.828, -73.051], [-36.823, -73.041], [-36.8235, -73.042]];
         color = 'orange';
       } else if (tipo === 'otro') {
-        ruta = [[-36.825, -73.038], [-36.824, -73.040], [-36.8231, -73.0425]];
+        ruta = [[-36.823, -73.041], [-36.824, -73.040], [-36.825, -73.038]];
         color = 'green';
       }
 
