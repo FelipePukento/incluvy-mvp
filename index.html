@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Incluvy - MVP</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+    }
+    .phone-container {
+      width: 375px;
+      height: 667px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-radius: 30px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #eeeeee;
+      padding: 0.5rem;
+    }
+    nav button {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .screen {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+    }
+    .card {
+      background: #e3f2fd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+    }
+    .highlight {
+      font-weight: bold;
+      color: #0d47a1;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone-container">
+    <header>
+      Incluvy - Transporte Inclusivo
+    </header>
+    <div class="screen" id="pantalla">
+      <div class="card">
+        <p>Selecciona tu <span class="highlight">tipo de movilidad</span>:</p>
+        <button onclick="cambiarPantalla('rutas')">♿ Silla de ruedas</button><br />
+        <button onclick="cambiarPantalla('rutas')">🦯 Discapacidad visual</button><br />
+        <button onclick="cambiarPantalla('rutas')">👩‍🦽 Otras condiciones</button>
+      </div>
+    </div>
+    <nav>
+      <button onclick="cambiarPantalla('inicio')">🏠 Inicio</button>
+      <button onclick="cambiarPantalla('rutas')">🗺️ Rutas</button>
+      <button onclick="cambiarPantalla('accesibilidad')">🚍 Accesibilidad</button>
+    </nav>
+  </div>
+
+  <script>
+    function cambiarPantalla(pagina) {
+      const pantalla = document.getElementById("pantalla");
+      if (pagina === "inicio") {
+        pantalla.innerHTML = `
+          <div class='card'>
+            <p>Bienvenido a <span class='highlight'>Incluvy</span>. Aquí puedes planificar tu ruta considerando tus necesidades de movilidad.</p>
+          </div>`;
+      } else if (pagina === "rutas") {
+        pantalla.innerHTML = `
+          <div class='card'>
+            <p>🔍 Aquí podrás ver rutas sugeridas que incluyen <span class='highlight'>paraderos accesibles</span> y buses compatibles con tu condición.</p>
+            <p>Ejemplo: Ruta 303 - Bus con rampa, espacio reservado.</p>
+          </div>`;
+      } else if (pagina === "accesibilidad") {
+        pantalla.innerHTML = `
+          <div class='card'>
+            <p>🚍 Buses próximos con accesibilidad:</p>
+            <ul>
+              <li>🚌 Línea 105 - 4 min - Con rampa</li>
+              <li>🚌 Línea 204 - 9 min - Piso bajo</li>
+            </ul>
+          </div>`;
+      }
+    }
+  </script>
+</body>
+</html>
